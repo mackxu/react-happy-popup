@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "browserslint": [
+    "last 2 versions",
+    "Android >= 8",
+    "iOS >= 12"
+  ],
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "happy-popup",
+  "author": "xuyadong",
+  "module": "dist/happy-popup.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/happy-popup.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/happy-popup.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.3",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "autoprefixer": "^10.3.4",
+    "cssnano": "^5.0.8",
+    "husky": "^7.0.2",
+    "less": "^4.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup-plugin-postcss": "^4.0.1",
+    "size-limit": "^5.0.3",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/react-transition-group": "^4.4.2",
+    "classnames": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react-transition-group": "^4.4.2"
+  }
+}
